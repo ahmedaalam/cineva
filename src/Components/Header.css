@@ -1,0 +1,53 @@
+.Navbar {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.Navbar h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #C20F47;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  margin: 0;
+  white-space: nowrap;
+} 
+
+.SignIn {
+  background: #C20F47;
+  color: #FFFFFF;
+  padding: 10px 24px;
+  border: 2px solid #C20F47;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.SignIn:hover {
+  background-color: #120812;
+  color: #C20F47;
+  border: 2px solid #C20F47;
+}
+
+
+@media (max-width: 480px) {
+  .Navbar {
+    padding: 0 20px;
+    height: 80px;
+  }
+
+  .SignIn {
+    padding: 8px 16px;
+  }
+}

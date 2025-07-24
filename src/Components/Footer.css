@@ -1,0 +1,149 @@
+.Bottom {
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4rem;
+  padding-top: 100px;
+  border-bottom: 1px solid #FFB6B9;
+}
+
+.Bottom h1 {
+  font-family: 'Montserrat', 'sans-serif';
+  color: #C20F47;
+}
+
+.Details {
+  display: flex;
+  gap: 50px;
+}
+
+.Bottom h3 {
+  color: #FFFFFF;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.Bottom p {
+  color: #F3D5DD; 
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.Bottom p:hover {
+  color: #C20F47;
+}
+
+.Panel {
+  color: #F3D5DD; 
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Material {
+  display: flex;
+  gap: 20px;
+}
+
+.Panel p {
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.Icons i {
+  color: #FFB6B9;
+  margin-left: 20px;
+  font-size: 1.5rem;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.Icons i:hover {
+  color: #C20F47;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px rgba(200, 50, 100, 0.4);
+}
+
+@media (max-width: 992px) {
+  .Bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding-top: 60px;
+    gap: 40px;
+  }
+
+  .Details {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .Bottom h1 {
+    font-size: 1.8rem;
+  }
+
+  .Bottom h3 {
+    font-size: 1rem;
+  }
+
+  .Bottom p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .Bottom {
+    padding: 40px 20px 60px 20px;
+  }
+
+  .Bottom h1 {
+    font-size: 1.5rem;
+  }
+
+  .Bottom h3 {
+    font-size: 0.95rem;
+  }
+
+  .Bottom p {
+    font-size: 0.85rem;
+  }
+
+  .Panel {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .Material {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .Panel p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .Icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .Icons i {
+    font-size: 1.25rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+}

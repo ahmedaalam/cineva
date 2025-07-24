@@ -1,0 +1,324 @@
+.Content{
+  font-family: 'Montserrat', 'sans-serif';
+  color: #FFFFFF;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: calc(50vh - 100px);
+}
+
+p{
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+.Tag-1{
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.Tag-2{
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+.Info{
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.Info input {
+  height: 50px;
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid #201020;
+  border-radius: 10px;
+  outline: none;
+  background-color: #201020;
+  color: #FFFFFF;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.Info input::placeholder {
+  color: #FFB6B9;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.Info input:focus {
+  border-color: #FFB6B9;
+  box-shadow: 0 0 12px rgba(255, 182, 185, 0.4);
+}
+
+.Info button {
+  position: relative;
+  height: 50px;
+  width: 280px;
+  color: #FFFFFF;
+  background-color: #C20F47;
+  border: 2px solid #C20F47;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+  
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.Info button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #120812;
+  z-index: -1;
+  transition: width 0.4s ease;
+}
+
+.Info button:hover::before {
+  width: 100%;
+}
+
+.Info button:hover {
+  color: #C20F47;
+}
+
+.Info i {
+  margin-left: 20px;
+}
+
+/* Section 1 */
+.Section-1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.Container{
+  width: 100%;
+  padding-left: 150px;
+  color: #FFFFFF;
+}
+
+.Cards{
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.Movie {
+  height: 280px;
+  width: 200px;
+  overflow: hidden;
+  background-color: #1a0d1a;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.Movie:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 182, 185, 0.4);
+}
+
+.Movie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.Movie:hover img {
+  transform: scale(1.1);
+}
+
+/* Section 2 */
+.Section-2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.Section-2 p{
+  color: #FFFFFF;
+}
+
+.Section-2 h2{
+  width: 100%;
+  padding-left: 150px;
+  color: #FFFFFF;
+}
+
+.Section-2 span{
+   color: #C20F47;
+}
+
+ .Search{
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.Search input {
+  height: 50px;
+  width: 100%;
+  padding: 12px 48px 12px 16px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid #201020;
+  border-radius: 10px;
+  background-color: #201020;
+  color: #FFFFFF;
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.Search input::placeholder {
+  color: #FFB6B9;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.Search input:focus {
+  border-color: #FFB6B9;
+  box-shadow: 0 0 12px rgba(255, 182, 185, 0.4);
+}
+
+.Search i {
+  position: absolute;
+  right: 16px;
+  font-size: 1.3rem;
+  color: #FFB6B9;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.Search i:hover {
+  color: #C20F47;
+  transform: scale(1.1);
+}
+
+/* GENERAL FONT SCALE */
+p {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.Tag-1 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.Tag-2 {
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 992px) {
+  .Content {
+    padding-top: 30vh;
+    height: auto;
+  }
+
+  .Info {
+    flex-direction: column;
+    padding-left: 0;
+    gap: 20px;
+    width: 90%;
+  }
+
+  .Info input,
+  .Info button {
+    width: 100%;
+    max-width: none;
+  }
+
+  .Container,
+  .Section-2 h2 {
+    padding-left: 40px;
+  }
+
+  .Cards {
+    width: 100%;
+    padding: 0 20px;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .Movie {
+    width: 45%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+  }
+}
+
+@media (max-width: 576px) {
+  .Content {
+    padding-top: 20vh;
+  }
+
+  .p {
+    font-size: 2rem;
+  }
+
+  .Tag-1, .Tag-2 {
+    text-align: center;
+  }
+
+  .Info i {
+    display: none;
+  }
+
+  .Movie {
+    width: 80%;
+  }
+
+  .Search input {
+    max-width: 90%;
+  }
+
+  .Search i {
+    right: 20px;
+  }
+
+  .Section-2 h2 {
+    font-size: 1.25rem;
+    padding-left: 20px;
+  }
+}
