@@ -12,17 +12,17 @@ A modern React.js movie website powered by the TMDB API, showcasing trending mov
 
 ## 🌐 Live Demo
 
-👉 https://your-username.github.io/cineva-website-frontend/
+https://ahmedaalam.github.io/cineva-website-frontend/
 
 ---
 
 ## ✨ Features
 
-* 🎥 Browse popular & trending movies
-* ▶️ Watch movie trailers
-* ⚡ Fast and dynamic UI with API data
-* 📱 Fully responsive (mobile, tablet, desktop)
-* 🎨 Clean and modern design
+* Browse popular & trending movies
+* Watch movie trailers
+* Fast and dynamic UI with API data
+* Fully responsive (mobile, tablet, desktop)
+* Clean and modern design
 
 ---
 
@@ -72,15 +72,6 @@ Create a `.env` file in the root directory and add:
 ```env
 VITE_TMDB_API_KEY=your_api_key_here
 ```
-
----
-
-## 🚀 Future Improvements
-
-* 🔍 Search functionality
-* ❤️ Add to favorites
-* 🎭 Movie details page enhancement
-* 🌙 Dark mode
 
 ---
 
