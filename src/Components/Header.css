@@ -48,11 +48,15 @@
 }
 
 .nav-item {
+  position: relative;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-gray);
   text-decoration: none;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .nav-item:hover {
@@ -62,6 +66,38 @@
 .nav-item.active {
   color: #fff;
   font-weight: 700;
+}
+
+.nav-list-badge {
+  background-color: var(--netflix-red);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.mobile-list-icon {
+  display: none;
+  position: relative;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.mobile-list-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: var(--netflix-red);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Right Section */

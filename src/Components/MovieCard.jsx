@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useWatchlist } from "../context/WatchlistContext";
 import "./MovieCard.css";
 
 const MovieCard = ({ movie }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const { isInWatchlist, toggleWatchlist, openTrailer } = useWatchlist();
   const navigate = useNavigate();
 
   if (!movie) return null;
@@ -12,6 +14,8 @@ const MovieCard = ({ movie }) => {
   const handleClick = () => {
     navigate(`/moviepage/${movie.id}`);
   };
+
+  const inList = isInWatchlist(movie.id);
 
   const releaseYear = movie.release_date
     ? new Date(movie.release_date).getFullYear()
@@ -60,21 +64,21 @@ const MovieCard = ({ movie }) => {
               className="card-action-btn play"
               onClick={(e) => {
                 e.stopPropagation();
-                navigate(`/moviepage/${movie.id}`);
+                openTrailer(movie);
               }}
-              title="Play"
+              title="Play Trailer"
             >
               <i className="fa-solid fa-play"></i>
             </button>
             <button
-              className="card-action-btn list"
+              className={`card-action-btn list ${inList ? "in-list" : ""}`}
               onClick={(e) => {
                 e.stopPropagation();
-                alert(`Added "${movie.title || movie.name}" to My List!`);
+                toggleWatchlist(movie);
               }}
-              title="Add to My List"
+              title={inList ? "Remove from My List" : "Add to My List"}
             >
-              <i className="fa-solid fa-plus"></i>
+              <i className={`fa-solid ${inList ? "fa-check" : "fa-plus"}`}></i>
             </button>
             <button
               className="card-action-btn info"

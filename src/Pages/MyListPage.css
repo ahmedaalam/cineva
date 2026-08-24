@@ -1,0 +1,126 @@
+.my-list-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-netflix);
+}
+
+.my-list-container {
+  flex: 1;
+  padding: 110px 4% 60px;
+  max-width: 1500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.my-list-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 16px;
+}
+
+.my-list-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.my-list-count {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.my-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.my-list-card-wrapper {
+  width: 100%;
+}
+
+/* Empty State */
+.my-list-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  min-height: 50vh;
+}
+
+.empty-icon-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.my-list-empty h2 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.my-list-empty p {
+  color: var(--text-muted);
+  max-width: 480px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.my-list-empty p strong {
+  color: #fff;
+}
+
+.browse-movies-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--netflix-red);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.browse-movies-btn:hover {
+  background-color: var(--netflix-red-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .my-list-container {
+    padding: 90px 16px 40px;
+  }
+  .my-list-title {
+    font-size: 1.8rem;
+  }
+  .my-list-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}

@@ -126,6 +126,16 @@
   background: rgba(255, 255, 255, 0.8);
 }
 
+.card-action-btn.list.in-list {
+  background: rgba(70, 211, 105, 0.2);
+  border-color: #46d369;
+  color: #46d369;
+}
+
+.card-action-btn.list.in-list:hover {
+  background: rgba(70, 211, 105, 0.4);
+}
+
 .card-action-btn.info {
   margin-left: auto;
 }

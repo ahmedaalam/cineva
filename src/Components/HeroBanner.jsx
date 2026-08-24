@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useWatchlist } from "../context/WatchlistContext";
 import "./HeroBanner.css";
 
 const HeroBanner = ({ movies = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { openTrailer, toggleWatchlist, isInWatchlist } = useWatchlist();
   const navigate = useNavigate();
 
   const featured = movies.slice(0, 5);
@@ -21,6 +23,7 @@ const HeroBanner = ({ movies = [] }) => {
   }
 
   const currentMovie = featured[currentIndex] || featured[0];
+  const inList = isInWatchlist(currentMovie?.id);
   const backdropUrl = currentMovie?.backdrop_path
     ? `https://image.tmdb.org/t/p/original${currentMovie.backdrop_path}`
     : `https://image.tmdb.org/t/p/original${currentMovie.poster_path}`;
@@ -59,10 +62,18 @@ const HeroBanner = ({ movies = [] }) => {
         <div className="billboard-actions">
           <button
             className="billboard-btn play-btn"
-            onClick={() => navigate(`/moviepage/${currentMovie.id}`)}
+            onClick={() => openTrailer(currentMovie)}
           >
             <i className="fa-solid fa-play"></i>
             <span>Play</span>
+          </button>
+
+          <button
+            className={`billboard-btn list-btn ${inList ? "in-list" : ""}`}
+            onClick={() => toggleWatchlist(currentMovie)}
+          >
+            <i className={`fa-solid ${inList ? "fa-check" : "fa-plus"}`}></i>
+            <span>{inList ? "In My List" : "My List"}</span>
           </button>
 
           <button

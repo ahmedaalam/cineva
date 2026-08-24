@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Clean Bold Netflix-Style Cinema 'C' Silhouette -->
+  <path d="M 390 100 
+           C 220 30, 80 150, 80 256 
+           C 80 362, 220 482, 390 412 
+           L 390 320 
+           C 270 365, 175 305, 175 256 
+           C 175 207, 270 147, 390 192 
+           Z" 
+        fill="#E50914"/>
+  <!-- Central Crisp Cinema Spark / Play Notch -->
+  <polygon points="260,225 315,256 260,287" fill="#FFFFFF"/>
+</svg>

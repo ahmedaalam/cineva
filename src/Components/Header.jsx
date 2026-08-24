@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useWatchlist } from "../context/WatchlistContext";
 import "./Header.css";
 
 const Header = ({ onSearch, searchValue }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState(searchValue || "");
+  const { watchlist } = useWatchlist();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -63,9 +65,15 @@ const Header = ({ onSearch, searchValue }) => {
           <a href="#top-rated-row" className="nav-item">
             New & Popular
           </a>
-          <a href="#sci-fi-row" className="nav-item">
-            Sci-Fi & Thrillers
-          </a>
+          <Link
+            to="/my-list"
+            className={`nav-item ${location.pathname === "/my-list" ? "active" : ""}`}
+          >
+            My List
+            {watchlist.length > 0 && (
+              <span className="nav-list-badge">{watchlist.length}</span>
+            )}
+          </Link>
         </nav>
       </div>
 
@@ -106,6 +114,14 @@ const Header = ({ onSearch, searchValue }) => {
           )}
         </form>
 
+        {/* My List Quick Nav Icon on Mobile */}
+        <Link to="/my-list" className="mobile-list-icon" title="My List">
+          <i className="fa-solid fa-bookmark"></i>
+          {watchlist.length > 0 && (
+            <span className="mobile-list-badge">{watchlist.length}</span>
+          )}
+        </Link>
+
         {/* Notifications Icon */}
         <div className="header-icon notification-bell">
           <i className="fa-regular fa-bell"></i>
@@ -119,7 +135,8 @@ const Header = ({ onSearch, searchValue }) => {
             alt="Profile Avatar"
             className="profile-avatar"
             onError={(e) => {
-              e.target.src = "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=60";
+              e.target.src =
+                "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&auto=format&fit=crop&q=60";
             }}
           />
           <i className="fa-solid fa-caret-down caret-icon"></i>

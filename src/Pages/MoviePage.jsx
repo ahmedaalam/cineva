@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import MovieCard from "../Components/MovieCard";
+import { useWatchlist } from "../context/WatchlistContext";
 import "./MoviePage.css";
 
 const API_KEY = "a0294b1b936644853a15e61eebef38ae";
@@ -11,6 +12,7 @@ const BASE_URL = "https://api.themoviedb.org/3";
 const MoviePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { isInWatchlist, toggleWatchlist, openTrailer } = useWatchlist();
   const [movie, setMovie] = useState(null);
   const [credits, setCredits] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
@@ -173,15 +175,27 @@ const MoviePage = () => {
 
             {/* CTA Buttons */}
             <div className="detail-actions">
-              {trailerKey && (
-                <a
-                  href="#trailer-section"
-                  className="action-btn primary"
-                  onClick={() => setIsTrailerPlaying(true)}
-                >
-                  <i className="fa-solid fa-play"></i> Watch Trailer
-                </a>
-              )}
+              <button
+                className="action-btn primary"
+                onClick={() => openTrailer(movie)}
+              >
+                <i className="fa-solid fa-play"></i> Watch Trailer
+              </button>
+
+              <button
+                className={`action-btn list-toggle-btn ${isInWatchlist(movie.id) ? "in-list" : ""}`}
+                onClick={() => toggleWatchlist(movie)}
+              >
+                <i
+                  className={`fa-solid ${
+                    isInWatchlist(movie.id) ? "fa-check" : "fa-plus"
+                  }`}
+                ></i>
+                <span>
+                  {isInWatchlist(movie.id) ? "In My List" : "Add to My List"}
+                </span>
+              </button>
+
               {movie.homepage && (
                 <a
                   href={movie.homepage}

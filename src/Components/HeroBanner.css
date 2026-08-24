@@ -138,6 +138,21 @@
   background-color: rgba(255, 255, 255, 0.75);
 }
 
+.billboard-btn.list-btn {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: #ffffff;
+}
+
+.billboard-btn.list-btn:hover {
+  background-color: rgba(109, 109, 110, 0.4);
+}
+
+.billboard-btn.list-btn.in-list {
+  background-color: rgba(70, 211, 105, 0.25);
+  color: #46d369;
+  border: 1px solid #46d369;
+}
+
 .billboard-btn.info-btn {
   background-color: rgba(109, 109, 110, 0.7);
   color: #ffffff;

@@ -247,6 +247,23 @@
   box-shadow: 0 8px 25px rgba(255, 42, 84, 0.6);
 }
 
+.action-btn.list-toggle-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.action-btn.list-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.action-btn.list-toggle-btn.in-list {
+  background: rgba(70, 211, 105, 0.2);
+  border-color: #46d369;
+  color: #46d369;
+}
+
 .action-btn.secondary {
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
