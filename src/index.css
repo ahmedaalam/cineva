@@ -1,11 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Outfit:wght@400;500;600;700&family=Anton&family=Bebas+Neue&display=swap');
+
+:root {
+  --bg-netflix: #141414;
+  --bg-navbar: rgba(20, 20, 20, 0.95);
+  --bg-card: #181818;
+  --bg-card-hover: #262626;
+  --netflix-red: #e50914;
+  --netflix-red-hover: #b80710;
+  --text-white: #ffffff;
+  --text-gray: #e5e5e5;
+  --text-muted: #808080;
+  --border-dark: rgba(255, 255, 255, 0.1);
+  --font-netflix: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-logo: 'Montserrat', sans-serif;
+  --font-rank: 'Bebas Neue', 'Anton', sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body, #root {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   min-height: 100vh;
-  background-color: #120812;
-  font-family: plexeina-regular, Helvetica, sans-serif;
+  background-color: var(--bg-netflix);
+  color: var(--text-white);
+  font-family: var(--font-netflix);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Skeleton Loading Animation */
+.skeleton {
+  background: linear-gradient(90deg, #181818 25%, #252525 50%, #181818 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite ease-in-out;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+button {
+  font-family: var(--font-netflix);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

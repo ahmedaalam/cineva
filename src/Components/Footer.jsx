@@ -2,82 +2,47 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div>
-      <div className="Bottom">
-        <h1>CINEVA</h1>
+    <footer className="netflix-footer">
+      <div className="footer-wrapper">
+        <div className="footer-social-row">
+          <a href="#" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i className="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
+        </div>
 
-        <div className="Details">
-          <div>
-            <h3>Company</h3>
-            <p>About</p>
-            <p>Careers</p>
-            <p>Our Culture</p>
-            <p>Giving</p>
-            <p>Partners</p>
-            <p>News</p>
-            <p>Advertise with us</p>
-          </div>
+        <div className="footer-links-columns">
+          <ul>
+            <li><a href="#">Audio Description</a></li>
+            <li><a href="#">Investor Relations</a></li>
+            <li><a href="#">Legal Notices</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Corporate Information</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Media Center</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
 
-          <div>
-            <h3>Go Premium</h3>
-            <p>Plans</p>
-            <p>Cineplex</p>
-            <p>Cineva Lab</p>
-            <p>Get Perks</p>
-          </div>
+        <div className="service-code-btn">
+          <span>Service Code</span>
+        </div>
 
-          <div>
-            <h3>Downloads</h3>
-            <p>Cineva Media Server</p>
-            <p>Cineva</p>
-            <p>Cineva Photos</p>
-            <p>Cineva Dash</p>
-            <p>Where to Watch</p>
-          </div>
-
-          <div>
-            <h3>Support</h3>
-            <p>Finding Help</p>
-            <p>Support Library</p>
-            <p>Community Forms</p>
-            <p>Guidelines</p>
-            <p>Billing Questions</p>
-            <p>Status</p>
-            <p>Get in Touch</p>
-          </div>
-
-          <div>
-            <h3>Watch Free</h3>
-            <p>Discover on Plex</p>
-            <p>What to Watch</p>
-            <p>TV Channel Finder</p>
-            <p>A24 Movies</p>
-            <p>Action Movies</p>
-            <p>Thriller Movies</p>
-            <p>Sci-fi Movies</p>
-          </div>
+        <div className="footer-copyright">
+          © 1997-{new Date().getFullYear()} Cineva, Inc.
         </div>
       </div>
-
-      <div className="Panel">
-        <div className="Material">
-          <p>Copyright © 2025 Cineva </p>
-          <p>Privacy & Legal </p>
-          <p>Accessibility</p>
-          <p>Manage Cookies</p>
-          <p>Language: English (US)</p>
-        </div>
-
-        <div className="Icons">
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-tiktok"></i>
-          <i class="fa-brands fa-x-twitter"></i>
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-linkedin-in"></i>
-          <i class="fa-brands fa-youtube"></i>
-        </div>
-      </div>
-    </div>
+    </footer>
   );
 };
 

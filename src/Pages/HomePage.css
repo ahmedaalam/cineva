@@ -1,0 +1,101 @@
+.netflix-homepage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-netflix);
+  overflow-x: hidden;
+}
+
+.netflix-main-feed {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.netflix-rows-container {
+  position: relative;
+  z-index: 10;
+  margin-top: -100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+/* Search Results Layout */
+.netflix-search-results {
+  padding: 100px 4% 60px;
+  min-height: 70vh;
+}
+
+.search-meta-header {
+  margin-bottom: 24px;
+}
+
+.search-meta-header h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.search-meta-header h3 span {
+  color: #fff;
+  font-weight: 700;
+}
+
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.search-card-wrap {
+  width: 100%;
+}
+
+.search-empty {
+  color: var(--text-gray);
+  max-width: 500px;
+  margin-top: 40px;
+  line-height: 1.6;
+}
+
+.search-empty p {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.search-empty span {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.search-empty ul {
+  margin-top: 8px;
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+
+.search-empty li {
+  margin-bottom: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .netflix-rows-container {
+    margin-top: -40px;
+  }
+  .search-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .netflix-rows-container {
+    margin-top: -20px;
+  }
+  .search-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}

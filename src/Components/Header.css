@@ -1,53 +1,204 @@
-.Navbar {
-  background-color: transparent;
-  position: absolute;
+.netflix-header {
+  position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 10;
-  height: 100px;
+  left: 0;
+  right: 0;
+  height: 68px;
+  padding: 0 4%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  box-sizing: border-box;
+  z-index: 1000;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  transition: background-color 0.4s ease;
 }
 
-.Navbar h1 {
-  font-family: 'Montserrat', sans-serif;
-  color: #C20F47;
-  font-size: clamp(1.25rem, 4vw, 2rem);
-  margin: 0;
-  white-space: nowrap;
-} 
+.netflix-header.scrolled {
+  background-color: var(--bg-netflix);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
 
-.SignIn {
-  background: #C20F47;
-  color: #FFFFFF;
-  padding: 10px 24px;
-  border: 2px solid #C20F47;
-  border-radius: 10px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Cineva Red Logo */
+.netflix-logo {
+  font-family: var(--font-logo);
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--netflix-red);
   text-decoration: none;
-  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
+}
+
+.netflix-logo:hover {
+  transform: scale(1.02);
+}
+
+/* Nav Links */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-item {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: var(--text-muted);
+}
+
+.nav-item.active {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Right Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Search Bar */
+.netflix-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 4px 6px;
   transition: all 0.3s ease;
 }
 
-.SignIn:hover {
-  background-color: #120812;
-  color: #C20F47;
-  border: 2px solid #C20F47;
+.netflix-search.open,
+.netflix-search:focus-within {
+  background: rgba(0, 0, 0, 0.85);
+  border-color: rgba(255, 255, 255, 0.8);
+  padding: 4px 10px;
 }
 
+.search-btn-icon {
+  background: transparent;
+  color: #fff;
+  font-size: 1.05rem;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-@media (max-width: 480px) {
-  .Navbar {
-    padding: 0 20px;
-    height: 80px;
+.netflix-search input {
+  width: 0;
+  opacity: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 0.85rem;
+  font-family: var(--font-netflix);
+  transition: width 0.35s ease, opacity 0.3s ease;
+  padding: 0;
+}
+
+.netflix-search.open input,
+.netflix-search:focus-within input {
+  width: 200px;
+  opacity: 1;
+  padding-left: 8px;
+}
+
+.netflix-search input::placeholder {
+  color: #888;
+}
+
+.clear-search-btn {
+  background: transparent;
+  color: #888;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.clear-search-btn:hover {
+  color: #fff;
+}
+
+/* Notification Bell */
+.notification-bell {
+  position: relative;
+  font-size: 1.1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.notification-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--netflix-red);
+  border-radius: 50%;
+}
+
+/* Profile Menu */
+.profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.caret-icon {
+  font-size: 0.75rem;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.profile-menu:hover .caret-icon {
+  transform: rotate(180deg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .header-nav {
+    display: none;
   }
+}
 
-  .SignIn {
-    padding: 8px 16px;
+@media (max-width: 600px) {
+  .netflix-header {
+    padding: 0 16px;
+    height: 60px;
+  }
+  .netflix-logo {
+    font-size: 1.4rem;
+  }
+  .header-right {
+    gap: 14px;
+  }
+  .netflix-search.open input,
+  .netflix-search:focus-within input {
+    width: 140px;
   }
 }
