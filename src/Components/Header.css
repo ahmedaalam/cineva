@@ -77,6 +77,37 @@
   border-radius: 10px;
 }
 
+.nav-surprise-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.nav-surprise-btn i {
+  color: var(--netflix-red);
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-surprise-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.nav-surprise-btn:hover i {
+  transform: rotate(45deg);
+}
+
 .mobile-list-icon {
   display: none;
   position: relative;
@@ -233,8 +264,15 @@
   .header-right {
     gap: 14px;
   }
+  .mobile-list-icon {
+    display: flex;
+    align-items: center;
+  }
   .netflix-search.open input,
   .netflix-search:focus-within input {
-    width: 140px;
+    width: 130px;
+  }
+  .notification-bell {
+    display: none;
   }
 }

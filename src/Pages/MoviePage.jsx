@@ -279,9 +279,19 @@ const MoviePage = () => {
                   ? `https://image.tmdb.org/t/p/w185${actor.profile_path}`
                   : "https://via.placeholder.com/185x278?text=No+Photo";
                 return (
-                  <div key={actor.id} className="cast-card">
+                  <div
+                    key={actor.id}
+                    className="cast-card clickable"
+                    onClick={() => navigate(`/person/${actor.id}`)}
+                    title={`View ${actor.name}'s profile`}
+                  >
                     <div className="cast-img-box">
-                      <img src={profileImg} alt={actor.name} loading="lazy" />
+                      <img
+                        src={profileImg}
+                        alt={actor.name}
+                        loading="lazy"
+                        draggable="false"
+                      />
                     </div>
                     <div className="cast-info">
                       <h4 className="actor-name">{actor.name}</h4>

@@ -7,7 +7,7 @@ const Header = ({ onSearch, searchValue }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState(searchValue || "");
-  const { watchlist } = useWatchlist();
+  const { watchlist, openSurprise } = useWatchlist();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -74,6 +74,15 @@ const Header = ({ onSearch, searchValue }) => {
               <span className="nav-list-badge">{watchlist.length}</span>
             )}
           </Link>
+          <button
+            type="button"
+            className="nav-surprise-btn"
+            onClick={openSurprise}
+            title="Play Something (Random Movie)"
+          >
+            <i className="fa-solid fa-dice"></i>
+            <span>Surprise Me</span>
+          </button>
         </nav>
       </div>
 

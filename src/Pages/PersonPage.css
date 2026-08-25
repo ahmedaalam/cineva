@@ -1,0 +1,257 @@
+.person-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-netflix);
+}
+
+.person-page-loading {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-netflix);
+}
+
+.person-spinner-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 60vh;
+  color: var(--text-muted);
+}
+
+.person-container {
+  flex: 1;
+  padding: 100px 4% 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.person-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-dark);
+  color: var(--text-gray);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
+}
+
+.person-back-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  transform: translateX(-3px);
+}
+
+.person-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Sidebar */
+.person-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.person-photo-box {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  background-color: var(--bg-card);
+}
+
+.person-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.personal-info-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.personal-info-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 10px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.info-val {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Main Content */
+.person-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.person-name {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+}
+
+/* Biography */
+.biography-section h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.biography-text {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.biography-text.expanded {
+  display: block;
+}
+
+.read-more-btn {
+  background: transparent;
+  color: var(--netflix-red);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 6px 0;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
+
+.no-bio {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* Filmography Grid */
+.filmography-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filmography-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 12px;
+}
+
+.filmography-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filmography-header h3 i {
+  color: var(--netflix-red);
+}
+
+.filmography-count {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.filmography-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 18px;
+}
+
+.filmography-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.credit-character-role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 2px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .person-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  .person-sidebar {
+    width: 100%;
+    max-width: 320px;
+  }
+  .person-name {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .filmography-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}

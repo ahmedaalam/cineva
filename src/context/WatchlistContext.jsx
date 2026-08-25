@@ -20,6 +20,7 @@ export const WatchlistProvider = ({ children }) => {
   });
 
   const [activeTrailerMovie, setActiveTrailerMovie] = useState(null);
+  const [isSurpriseOpen, setIsSurpriseOpen] = useState(false);
 
   // Sync to localStorage
   useEffect(() => {
@@ -62,6 +63,14 @@ export const WatchlistProvider = ({ children }) => {
     setActiveTrailerMovie(null);
   };
 
+  const openSurprise = () => {
+    setIsSurpriseOpen(true);
+  };
+
+  const closeSurprise = () => {
+    setIsSurpriseOpen(false);
+  };
+
   return (
     <WatchlistContext.Provider
       value={{
@@ -73,6 +82,9 @@ export const WatchlistProvider = ({ children }) => {
         activeTrailerMovie,
         openTrailer,
         closeTrailer,
+        isSurpriseOpen,
+        openSurprise,
+        closeSurprise,
       }}
     >
       {children}
