@@ -12,7 +12,7 @@ A modern React.js movie website powered by the TMDB API, showcasing trending mov
 
 ## 🌐 Live Demo
 
-https://ahmedaalam.github.io/cineva-website-frontend/
+https://cineva-six.vercel.app/
 
 ---
 
@@ -48,7 +48,7 @@ https://ahmedaalam.github.io/cineva-website-frontend/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/cineva-website-frontend.git
+git clone https://github.com/ahmedaalam/cineva.git
 ```
 
 ### 2. Install dependencies
